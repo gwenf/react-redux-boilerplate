@@ -6,6 +6,5 @@
 
 To do list:
 
-* I need to add webpack configuration to handle styling, images, and fonts.
-* Add basic .sass/.scss implementation.
-* Add Karma, Mocha, and Expect or similar testing configuration.
+* Add testing.
+* Base styling.
