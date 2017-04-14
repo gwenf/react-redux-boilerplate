@@ -3,14 +3,14 @@ import { connect } from 'react-redux'
 import { exampleAction } from '../actions/actions'
 
 class ExampleComponent1 extends Component {
-	componentWillReceiveProps(nextProps){
+	componentWillReceiveProps (nextProps) {
 		console.log(nextProps)
 	}
 	render(){
 		return (
-			<div>
+			<div className='content-component'>
 				<h1>Hello from ExampleComponent1.</h1>
-				<button onClick={()=>{this.props.dispatch(exampleAction('dummy data here'))}}>Click here for redux test. (logs to console)</button>
+				<button className='hollow button warning' onClick={()=>{this.props.dispatch(exampleAction('dummy data here'))}}>Click here for redux test. (logs to console)</button>
 			</div>
 			)
 	}

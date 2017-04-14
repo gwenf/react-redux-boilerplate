@@ -14,7 +14,6 @@ import { store } from './store/store'
 import './styles/app.sass'
 
 
-// TODO: need to add: <Miss component={NotFound} />
 render(
 	<Provider store={store}>
 		<App />

@@ -6,6 +6,8 @@
 
 __Run `npm test` or `npm t` for testing__
 
-To do list:
+### Includes:
 
-* Base styling.
+1. Foundation CSS for styling - (Foundation Docs)[http://foundation.zurb.com/sites/docs]
+1. React v15.5
+1. React-Router v4

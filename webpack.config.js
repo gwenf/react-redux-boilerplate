@@ -21,7 +21,12 @@ module.exports = {
     extractSASS,
     extractCSS,
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new webpack.ProvidePlugin({
+      'jQuery': 'jquery',
+      '$': 'jquery',
+      'jquery': 'jquery'
+    })
   ],
   module: {
     loaders: [{
@@ -32,11 +37,12 @@ module.exports = {
 
     {
       test: /\.css$/,
-      loaders: ["style-loader", "css-loader?sourceMap"]
+      use: [ 'style-loader', 'css-loader' ]
     },
 
     {
       test: /\.scss$|\.sass$/,
+      exclude: [/node_modules/],
       loader: extractCSS.extract(['css-loader?sourceMap','sass-loader?sourceMap'])
     },
 
