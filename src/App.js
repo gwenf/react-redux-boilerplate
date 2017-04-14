@@ -17,7 +17,7 @@ export default class App extends Component {
 				</div>
 
 
-				<Route path='/' component={ExampleComponent1}/>
+				<Route exact={true} path='/' component={ExampleComponent1}/>
 				<Route path='/example' component={ExampleComponent2}/>
 
 			</div>
