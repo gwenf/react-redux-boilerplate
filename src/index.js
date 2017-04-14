@@ -1,26 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react'
+import { render } from 'react-dom'
+import App from './App'
 
-import {Route, Router, IndexRoute, useRouterHistory, browserHistory} from 'react-router';
-import { createHashHistory } from 'history'
-const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
+// import { Route, Router, IndexRoute } from 'react-router';
+import { BrowserRouter, Match, Miss } from 'react-router'
 
-import {Provider} from 'react-redux'
-import { store, dispatch } from './store/store'
+import createBrowserHistory from 'history/createBrowserHistory'
+const customHistory = createBrowserHistory()
 
-import ExampleComponent1 from './components/ExampleComponent1'
-import ExampleComponent2 from './components/ExampleComponent2'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 import './styles/app.sass'
 
-ReactDOM.render(
+
+// TODO: need to add: <Miss component={NotFound} />
+render(
 	<Provider store={store}>
-		<Router history={appHistory}>
-			<Route component={App}>
-				<Route path='/' component={ExampleComponent1} />
-				<Route path='/example' component={ExampleComponent2} />
-			</Route>
-		</Router>
+		<App />
 	</Provider>,
 	document.getElementById('root'));

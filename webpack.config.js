@@ -20,23 +20,24 @@ module.exports = {
   plugins: [
     extractSASS,
     extractCSS,
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
   ],
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
+      loaders: ['react-hot-loader', 'babel-loader'],
       include: path.join(__dirname, 'src')
     },
 
     {
       test: /\.css$/,
-      loaders: ["style", "css?sourceMap"]
+      loaders: ["style-loader", "css-loader?sourceMap"]
     },
 
     {
       test: /\.scss$|\.sass$/,
-      loader: extractCSS.extract(['css?sourceMap','sass?sourceMap'])
+      loader: extractCSS.extract(['css-loader?sourceMap','sass-loader?sourceMap'])
     },
 
     { test: /\.png|jpg$/, loader: 'url-loader?name=images/[name].[ext]' },
