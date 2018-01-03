@@ -8,6 +8,7 @@ var extractCSS = new ExtractTextPlugin('[name].css');
 module.exports = {
   devtool: 'inline-source-maps',
   entry: [
+    'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3030',
     'webpack/hot/only-dev-server',
     './src/index'
@@ -31,7 +32,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot-loader', 'babel-loader'],
+      loaders: ['react-hot-loader/webpack', 'babel-loader'],
       include: path.join(__dirname, 'src')
     },
 

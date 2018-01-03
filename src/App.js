@@ -7,7 +7,7 @@ import ExampleComponent2 from './components/ExampleComponent2'
 export default class App extends Component {
   render() {
     return (
-        <Router>
+      <Router>
         <div>
         	<div className='row'>
 
